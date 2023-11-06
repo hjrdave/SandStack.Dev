@@ -20,9 +20,14 @@ export default function Home() {
                 height={275}
               />
               <div className={"ps-4"}>
-                <h1 style={{ fontSize: "4.5rem" }}>SandStack</h1>
+                <h1 className={`${styles.logoTitleGradient} fw-bolder`}>
+                  SandStack
+                </h1>
                 <div className={"border-bottom border-3"}></div>
-                <p className={"pt-3"}>Nerd Free, Code Strong</p>
+                <p className={"pt-3 fs-2 fw-bolder"}>
+                  Productive and Fun
+                  <br /> Open Source Software
+                </p>
               </div>
             </div>
           </Col>
