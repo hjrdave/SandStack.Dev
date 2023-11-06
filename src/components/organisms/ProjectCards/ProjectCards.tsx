@@ -1,4 +1,3 @@
-"use client";
 import {
   Card,
   Col,
@@ -7,26 +6,31 @@ import {
   CardText,
   Button,
 } from "react-bootstrap";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function ProjectCards() {
-  const router = useRouter();
-
   const data = [
     {
       icon: (
         <>
-          <i className="fa-brands fa-react" style={{ fontSize: "5rem" }}></i>
+          <i
+            className="fa-brands fa-react"
+            style={{ fontSize: "5rem", color: "#2291c0" }}
+          ></i>
         </>
       ),
       title: "Neuron",
       lede: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      route: "",
+      route: "/neuron",
     },
     {
       icon: (
         <>
-          <i className="fa-brands fa-react" style={{ fontSize: "5rem" }}></i>
+          <i
+            className="fa-brands fa-react"
+            style={{ fontSize: "5rem", color: "#2291c0" }}
+          ></i>
         </>
       ),
       title: "DuelCalculatorJS",
@@ -41,27 +45,35 @@ export default function ProjectCards() {
       ),
       title: "RentalDVD API",
       lede: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      route: "",
+      route: "rental-dvd-api",
     },
     {
       icon: (
         <>
-          <i className="fa-brands fa-react" style={{ fontSize: "5rem" }}></i>
+          <i
+            className="fa-brands fa-react"
+            style={{ fontSize: "5rem", color: "#2291c0" }}
+          ></i>
         </>
       ),
       title: "Neuron DevTools",
       lede: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      route: "",
+      route: "neuron-devtools",
     },
     {
       icon: (
         <>
-          <i className="fa-brands fa-react" style={{ fontSize: "5rem" }}></i>
+          <Image
+            src={"/logo-treble-gsm.webp"}
+            alt={"TrebleGSM"}
+            width={85}
+            height={85}
+          />
         </>
       ),
       title: "TrebleGSM",
       lede: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      route: "/treble-gsm",
+      route: "https://treblegsm.org/",
     },
   ];
   return (
@@ -73,18 +85,17 @@ export default function ProjectCards() {
               <CardTitle className="d-flex justify-content-center">
                 {card.icon}
               </CardTitle>
-              <CardText>
+              <CardText as={"div"}>
                 <p className={"text-center pt-3"}>
                   <strong>{card.title}</strong>
                 </p>
                 <p>{card.lede}</p>
                 <div className={"d-flex justify-content-center"}>
-                  <Button
-                    variant={"secondary"}
-                    onClick={() => router.push(card.route ?? "", {})}
-                  >
-                    Learn More
-                  </Button>
+                  <Link href={card.route ?? ""} target={"_blank"}>
+                    <Button as={"span"} variant={"secondary"}>
+                      Learn More
+                    </Button>
+                  </Link>
                 </div>
               </CardText>
             </CardBody>

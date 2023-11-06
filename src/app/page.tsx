@@ -12,10 +12,12 @@ export default function Home() {
       <Col>
         <Row>
           <Col className={"d-flex justify-content-center pt-5"}>
-            <i
-              className="fa-brands fa-wordpress text-white"
-              style={{ fontSize: "10rem" }}
-            ></i>
+            <p>
+              <i
+                className="fa-brands fa-wordpress"
+                style={{ fontSize: "10rem" }}
+              ></i>
+            </p>
           </Col>
         </Row>
         <Row xs={1} md={2} lg={3} className="g-4 pt-5">

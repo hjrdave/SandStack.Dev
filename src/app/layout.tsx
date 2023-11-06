@@ -19,16 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-bs-theme="dark">
       <Script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         type="text/css"
         stylesheets={[
-          "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
+          "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",
         ]}
       />
+      {/* <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" /> */}
       <Script src="https://kit.fontawesome.com/bc8edc6f62.js" />
-      <body className={`${inter.className} bg-dark`}>
+      <body className={`${inter.className}`}>
         <Header />
         <Container>
           <Row>
