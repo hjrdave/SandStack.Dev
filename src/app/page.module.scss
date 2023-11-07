@@ -1,10 +1,9 @@
+@use "../variables.scss" as *;
+
 .logoTitleGradient {
-  background: rgb(246, 133, 31);
-  /* Set the background color */
-  background: linear-gradient(to right, #219ebc 0%, #f6851f 100%);
-  /* Mask the color to the text, and remove the rest  */
+  background: $secondary;
+  background: linear-gradient(to right, $secondary 0%, $primary 100%);
   -webkit-background-clip: text;
-  /* Make the text fill color value transparent so the masked background color comes through */
   -webkit-text-fill-color: transparent;
   font-size: 4.5rem;
 }
