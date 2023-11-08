@@ -8,7 +8,7 @@ export default function Footer() {
         <Row>
           <Col className={"d-flex justify-content-center"}>
             <p>
-              <small>&#169; Copyright {currentYear}</small>
+              <small>&#169; Copyright David A. Sanders {currentYear}</small>
             </p>
           </Col>
         </Row>
