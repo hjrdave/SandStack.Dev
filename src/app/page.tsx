@@ -23,7 +23,7 @@ export default function Home() {
                 <h1 className={`${styles.logoTitleGradient} fw-bolder`}>
                   SandStack
                 </h1>
-                <div className={"border-bottom border-3"}></div>
+                <div className={"border-bottom border-3 "}></div>
                 <p className={"pt-3 fs-2 fw-bolder"}>
                   Productive and Fun
                   <br /> Open Source Software

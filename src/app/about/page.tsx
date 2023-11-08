@@ -13,10 +13,10 @@ export default function About() {
               src={"/profile_pic.webp"}
               width={250}
               height={250}
-              className={"rounded"}
+              className={"rounded-circle"}
               alt={"David Sanders Profile Pic"}
             />
-            <div className={"ps-4"}>
+            <div className={"ps-5"}>
               <h1>David A. Sanders</h1>
               <p>
                 <small>
@@ -25,7 +25,7 @@ export default function About() {
                   of Coffee&nbsp;☕
                 </small>
               </p>
-              <div className={"border-bottom border-3"}></div>
+              <div className={"border-bottom border-2 border-secondary"}></div>
               <p className={"pt-3"}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

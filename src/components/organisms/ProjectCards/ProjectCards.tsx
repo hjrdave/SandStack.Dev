@@ -81,24 +81,26 @@ export default function ProjectCards() {
       {data.map((card, idx) => (
         <Col key={idx}>
           <Card>
-            <CardBody>
-              <CardTitle className="d-flex justify-content-center">
-                {card.icon}
-              </CardTitle>
-              <CardText as={"div"}>
-                <p className={"text-center pt-3"}>
-                  <strong>{card.title}</strong>
-                </p>
-                <p>{card.lede}</p>
-                <div className={"d-flex justify-content-center"}>
-                  <Link href={card.route ?? ""} target={"_blank"}>
-                    <Button as={"span"} variant={"secondary"}>
-                      Learn More
-                    </Button>
-                  </Link>
-                </div>
-              </CardText>
-            </CardBody>
+            <div className={"border-5 border-top border-primary rounded"}>
+              <CardBody className={"p-5"}>
+                <CardTitle className="d-flex justify-content-center">
+                  {card.icon}
+                </CardTitle>
+                <CardText as={"div"}>
+                  <p className={"text-center pt-3"}>
+                    <strong>{card.title}</strong>
+                  </p>
+                  <p>{card.lede}</p>
+                  <div className={"d-flex justify-content-center"}>
+                    <Link href={card.route ?? ""} target={"_blank"}>
+                      <Button as={"span"} variant={"secondary"}>
+                        Learn More
+                      </Button>
+                    </Link>
+                  </div>
+                </CardText>
+              </CardBody>
+            </div>
           </Card>
         </Col>
       ))}

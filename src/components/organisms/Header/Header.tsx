@@ -12,11 +12,15 @@ export default function Header({}: Props) {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className={"m-auto w-100 d-flex justify-content-end py-3"}>
-              <Nav.Item className={"pe-3"}>
-                <Link href={"/"}>Home</Link>
+              <Nav.Item className={"pe-3 fw-semibold"}>
+                <Link href={"/"} className="text-decoration-none">
+                  Home
+                </Link>
               </Nav.Item>
-              <Nav.Item>
-                <Link href={"/about"}>About</Link>
+              <Nav.Item className={"pe-3 fw-semibold"}>
+                <Link href={"/about"} className="text-decoration-none">
+                  About
+                </Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
