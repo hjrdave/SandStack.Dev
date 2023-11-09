@@ -12,24 +12,28 @@ export default function Home() {
       <Col>
         <Row>
           <Col className={"pt-3 d-flex justify-content-center"}>
-            <div className={"d-flex align-items-center"}>
-              <Image
-                src="/Logo-Sandstack.webp"
-                alt={"StandStack"}
-                width={275}
-                height={275}
-              />
-              <div className={"ps-4"}>
-                <h1 className={`${styles.logoTitleGradient} fw-bolder`}>
-                  SandStack
-                </h1>
-                <div className={"border-bottom border-3 "}></div>
-                <p className={"pt-3 fs-2 fw-bolder"}>
-                  Productive and Fun
-                  <br /> Open Source Software
-                </p>
-              </div>
-            </div>
+            <Row>
+              <Col
+                className={"d-flex flex-column flex-md-row align-items-center"}
+              >
+                <Image
+                  src="/Logo-Sandstack.webp"
+                  alt={"StandStack"}
+                  width={275}
+                  height={275}
+                />
+                <div className={"ps-4 pt-md-4"}>
+                  <h1 className={`${styles.logoTitleGradient} fw-bolder`}>
+                    SandStack
+                  </h1>
+                  <div className={"border-bottom border-3 "}></div>
+                  <p className={"pt-3 fs-2 fw-bolder"}>
+                    Productive and Fun
+                    <br /> Open Source Software
+                  </p>
+                </div>
+              </Col>
+            </Row>
           </Col>
         </Row>
         <Row xs={1} md={2} lg={3} className="g-4 pt-5">

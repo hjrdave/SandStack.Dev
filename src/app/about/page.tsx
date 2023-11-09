@@ -47,26 +47,6 @@ export default function About() {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col className={"d-flex flex-column align-items-center pt-5"}>
-            <p className={"fs-3"}>Find Me On</p>
-            <div className={"pt-3"}>
-              <Link
-                href={"https://www.linkedin.com/in/hjrdave"}
-                target="_blank"
-              >
-                <i
-                  className={`fa-brands fa-linkedin pe-3 ${styles.socialIcon} text-white`}
-                ></i>
-              </Link>
-              <Link href={"https://github.com/hjrdave"} target="_blank">
-                <i
-                  className={`fa-brands fa-github ps-3 ${styles.socialIcon} text-white`}
-                ></i>
-              </Link>
-            </div>
-          </Col>
-        </Row>
       </Col>
     </main>
   );

@@ -15,13 +15,13 @@ export default function ProjectCards() {
       icon: (
         <>
           <i
-            className="fa-brands fa-react"
-            style={{ fontSize: "5rem", color: "#2291c0" }}
+            className="fa-brands fa-js"
+            style={{ fontSize: "5rem", color: "#eed735" }}
           ></i>
         </>
       ),
       title: "Neuron",
-      lede: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+      lede: "Neuron is a light weight framework agnostic global state manager for Javascript apps, with React support.",
       route: "/neuron",
     },
     {
@@ -34,7 +34,7 @@ export default function ProjectCards() {
         </>
       ),
       title: "DuelCalculatorJS",
-      lede: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+      lede: "A duel calculator web app for the Yugioh Trading Card Game.",
       route: "https://hjrdave.github.io/DuelCalculator/",
     },
     {
@@ -44,20 +44,20 @@ export default function ProjectCards() {
         </>
       ),
       title: "RentalDVD API",
-      lede: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+      lede: "This is a REST testing API based on the DVD Rental Database.",
       route: "rental-dvd-api",
     },
     {
       icon: (
         <>
           <i
-            className="fa-brands fa-react"
+            className="fa-solid fa-screwdriver-wrench"
             style={{ fontSize: "5rem", color: "#2291c0" }}
           ></i>
         </>
       ),
       title: "Neuron DevTools",
-      lede: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+      lede: "Chrome devtools extension for the Neuron Global State Manager.",
       route: "neuron-devtools",
     },
     {
@@ -72,7 +72,7 @@ export default function ProjectCards() {
         </>
       ),
       title: "TrebleGSM",
-      lede: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+      lede: "A React global state manager with a simple API that uses React Hooks.",
       route: "https://treblegsm.org/",
     },
   ];
@@ -90,7 +90,7 @@ export default function ProjectCards() {
                   <p className={"text-center pt-3"}>
                     <strong>{card.title}</strong>
                   </p>
-                  <p>{card.lede}</p>
+                  <p className={"text-center"}>{card.lede}</p>
                   <div className={"d-flex justify-content-center"}>
                     <Link href={card.route ?? ""} target={"_blank"}>
                       <Button as={"span"} variant={"secondary"}>
