@@ -6,9 +6,13 @@ import styles from "./page.module.scss";
 export default function About() {
   return (
     <main className={"d-flex justify-content-center"}>
-      <Col sm={10}>
+      <Col sm={12} lg={10}>
         <Row>
-          <Col className={"d-flex"}>
+          <Col
+            className={
+              "d-flex flex-column align-items-center flex-lg-row align-items-lg-start"
+            }
+          >
             <Image
               src={"/profile_pic.webp"}
               width={250}
@@ -16,7 +20,7 @@ export default function About() {
               className={"rounded-circle"}
               alt={"David Sanders Profile Pic"}
             />
-            <div className={"ps-5"}>
+            <div className={"ps-5 pt-5 pt-lg-0"}>
               <h1>David A. Sanders</h1>
               <p>
                 <small>
