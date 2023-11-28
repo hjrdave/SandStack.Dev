@@ -14,10 +14,14 @@ export default function ProjectCards() {
     {
       icon: (
         <>
-          <i
-            className="fa-brands fa-js"
-            style={{ fontSize: "5rem", color: "#eed735" }}
-          ></i>
+          <>
+            <Image
+              src={"/logo-neuron.webp"}
+              alt={"Neuron State Manager"}
+              width={85}
+              height={85}
+            />
+          </>
         </>
       ),
       title: "Neuron",
