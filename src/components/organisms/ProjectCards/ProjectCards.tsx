@@ -96,7 +96,7 @@ export default function ProjectCards() {
                   </p>
                   <p className={"text-center"}>{card.lede}</p>
                   <div className={"d-flex justify-content-center"}>
-                    <Link href={card.route ?? ""} target={"_blank"}>
+                    <Link href={card.route ?? ""}>
                       <Button as={"span"} variant={"secondary"}>
                         Learn More
                       </Button>

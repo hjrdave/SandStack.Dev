@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { Container, Row, Col } from "react-bootstrap";
+import Header from "@/components/organisms/Header";
+import Footer from "@/components/organisms/Footer";
 import { Inter } from "next/font/google";
-import Script from "next/script";
-import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,9 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-bs-theme="dark">
-      <Script src="https://kit.fontawesome.com/bc8edc6f62.js" />
-      <body className={`${inter.className}`}>{children}</body>
-    </html>
+    <>
+      <Header />
+      <Container>
+        <Row>
+          <Col>{children}</Col>
+        </Row>
+      </Container>
+      <Footer />
+    </>
   );
 }
