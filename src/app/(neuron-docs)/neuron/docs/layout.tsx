@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Container, Row, Col } from "react-bootstrap";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Neuron | Sandstack",
+  title: "Docs | Neuron",
   description: "Documentation for the Neuron Global State Manager library.",
 };
 

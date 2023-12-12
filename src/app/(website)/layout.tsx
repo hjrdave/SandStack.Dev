@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Container, Row, Col } from "react-bootstrap";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SandStack",
