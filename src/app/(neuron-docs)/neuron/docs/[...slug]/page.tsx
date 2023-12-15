@@ -26,67 +26,26 @@ export default async function Page({ params }: Props) {
       ? slug.join("/")
       : "/404"
     : "/404";
-  const navIndex = await getNeuronIndex();
   const docsContent = await getNeuronDocs(route);
 
   return (
     <>
-      <Container fluid>
+      <Col className={"pt-4"}>
         <Row>
-          <Col sm={2} className={"d-flex flex-column align-items-start"}>
-            {navIndex.map((item, index) => (
-              <Fragment key={index}>
-                {item.filename ? (
-                  <Button
-                    variant="link"
-                    className={`text-decoration-none px-0`}
-                  >
-                    <Link
-                      href={`/neuron/docs/${item.filename}`}
-                      className={"text-decoration-none"}
-                    >
-                      <strong>{item.section}</strong>
-                    </Link>
-                  </Button>
-                ) : (
-                  <Collapsible label={item.section} labelClassName={"fw-bold"}>
-                    {item.items
-                      ? item.items.map((item, index) => (
-                          <p key={index} className={"ps-2 mb-2"}>
-                            <Link
-                              href={`/neuron/docs/${item.filename}`}
-                              className={"text-decoration-none"}
-                            >
-                              {item.title}
-                            </Link>
-                          </p>
-                        ))
-                      : null}
-                  </Collapsible>
-                )}
-              </Fragment>
-            ))}
-          </Col>
-
-          <Col>
-            <Row>
-              <Col className={"pe-3"}>
-                <Suspense fallback={<p>Loading....</p>}>
-                  <MDXContent {...docsContent} />
-                </Suspense>
-              </Col>
-            </Row>
-          </Col>
-
-          <Col sm={3}>
-            {(docsContent.frontmatter?.subnav as string[])?.map?.(
-              (item: any, index: number) => (
-                <p key={index}>{item}</p>
-              )
-            )}
+          <Col className={"pe-3"}>
+            <Suspense fallback={<p>Loading....</p>}>
+              <MDXContent {...docsContent} />
+            </Suspense>
           </Col>
         </Row>
-      </Container>
+      </Col>
+      <Col sm={3} className={"pt-4"}>
+        {(docsContent.frontmatter?.subnav as string[])?.map?.(
+          (item: any, index: number) => (
+            <p key={index}>{item}</p>
+          )
+        )}
+      </Col>
     </>
   );
 }
