@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Container, Row, Col } from "react-bootstrap";
+import DocsHeader from "@/components/organisms/DocsHeader";
+import Footer from "@/components/organisms/Footer";
 
 export const metadata: Metadata = {
   title: "Neuron",
@@ -14,18 +14,9 @@ export default function LandingLayout({
 }) {
   return (
     <>
-      <Container fluid>
-        <Row>
-          <Col
-            className={
-              "p-3 shadow shadow-1 d-flex justify-content-start align-items-center"
-            }
-          >
-            <p className={"mb-0"}>Neuron</p>
-          </Col>
-        </Row>
-        {children}
-      </Container>
+      <DocsHeader />
+      {children}
+      <Footer />
     </>
   );
 }
