@@ -67,9 +67,9 @@ export default async function Page({ params }: Props) {
                   ) : null}
                 </p>
               </div>
-              <div className={"pt-4"}>
+              {/* <div className={"pt-4"}>
                 <h1>{docsContent?.frontmatter?.title}</h1>
-              </div>
+              </div> */}
               <Suspense fallback={<p>Loading....</p>}>
                 <MDXContent {...docsContent} />
               </Suspense>
