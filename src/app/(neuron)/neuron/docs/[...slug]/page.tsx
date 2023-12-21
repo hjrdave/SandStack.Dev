@@ -47,7 +47,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <CodeHighlighting />
-      <Row>
+      <Row id={"markdownBodyContainer"}>
         <Col>
           <Row className={"d-flex justify-content-center"}>
             <Col sm={10} className={"pe-3"}>
@@ -79,7 +79,10 @@ export default async function Page({ params }: Props) {
           </Row>
         </Col>
         <Col sm={3} className={"pt-4 ps-4 pe-0"}>
-          <SubNav items={frontmatter.subnav} />
+          <SubNav
+            items={frontmatter.subnav}
+            markdownBodyContainerId={"#markdownBodyContainer"}
+          />
         </Col>
       </Row>
     </>

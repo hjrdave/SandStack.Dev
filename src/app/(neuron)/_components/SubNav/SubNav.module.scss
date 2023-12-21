@@ -1,5 +1,9 @@
-.stickySideNav {
+$primary: #57c09b80;
+.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 100px;
+}
+.active {
+  background-color: $primary !important;
 }
