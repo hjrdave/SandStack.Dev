@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { getNeuronIndex } from "@/lib/services/get-neuron-index";
 import { Container, Row, Col } from "react-bootstrap";
-import SideNav from "@/app/(neuron-docs)/_components/SideNav";
-import styles from "../../neuron.module.scss";
+import SideNav from "@/app/(neuron)/_components/SideNav";
 
 export const metadata: Metadata = {
   title: "Neuron",
@@ -17,7 +16,7 @@ export default async function DocsLayout({
   const navIndex = await getNeuronIndex();
   return (
     <>
-      <Container fluid className={`pt-4 ${styles.markdownBody}`}>
+      <Container fluid className={`pt-4`}>
         <Row>
           <Col sm={2} className={"ps-0"}>
             <SideNav navItems={navIndex} />

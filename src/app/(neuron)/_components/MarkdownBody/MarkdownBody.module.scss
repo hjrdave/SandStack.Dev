@@ -1,0 +1,15 @@
+$primary: #57c09b;
+.compContainer {
+  h1 {
+    color: $primary;
+  }
+  h2 {
+    padding-top: 1rem;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+  img {
+    max-width: 100%;
+  }
+}

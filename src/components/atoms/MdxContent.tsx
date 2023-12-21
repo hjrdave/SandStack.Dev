@@ -1,11 +1,21 @@
 "use client";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-
-export default function MDXContent(props: MDXRemoteSerializeResult) {
+import { MDXRemote } from "next-mdx-remote";
+interface Props {
+  compiledSource: string;
+  scope: { [key: string]: any };
+  frontmatter: { [key: string]: any };
+}
+export default function MDXContent({
+  compiledSource,
+  scope,
+  frontmatter,
+}: Props) {
   return (
     <>
       <MDXRemote
-        {...props}
+        frontmatter={frontmatter}
+        compiledSource={compiledSource}
+        scope={scope}
         components={{
           h2: (props) => {
             return (

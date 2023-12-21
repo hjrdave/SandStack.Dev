@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Header from "@/app/(neuron-docs)/_components/Header";
+import Header from "@/app/(neuron)/_components/Header";
 import Footer from "@/components/organisms/Footer";
 
 export const metadata: Metadata = {
