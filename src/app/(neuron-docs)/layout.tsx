@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import DocsHeader from "@/components/organisms/DocsHeader";
+import Header from "@/app/(neuron-docs)/_components/Header";
 import Footer from "@/components/organisms/Footer";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function LandingLayout({
 }) {
   return (
     <>
-      <DocsHeader />
+      <Header />
       {children}
       <Footer />
     </>

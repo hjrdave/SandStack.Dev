@@ -1,14 +1,13 @@
-import { Suspense, Fragment } from "react";
+import { Suspense } from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { getNeuronDocs } from "@/lib/services/get-neuron-docs";
 import { getNeuronIndex } from "@/lib/services/get-neuron-index";
-import { Container, Row, Col } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import MDXContent from "@/components/atoms/MdxContent";
 import CodeHighlighting from "@/components/atoms/CodeHighlighting";
-import styles from "../../../neuron.module.scss";
-import { pages } from "next/dist/build/templates/app-page";
+import Breadcrumbs from "@/components/atoms/Breadcrumbs";
+import BackNextBtnGroup from "@/components/atoms/BackNextBtnGroup";
+import SubNav from "@/app/(neuron-docs)/_components/SubNav/SubNav";
 
 export const metadata: Metadata = {
   title: "Docs | Neuron",
@@ -52,74 +51,19 @@ export default async function Page({ params }: Props) {
         <Col>
           <Row className={"d-flex justify-content-center"}>
             <Col sm={10} className={"pe-3"}>
-              <div>
-                <p className={styles.breadcrumbs}>
-                  <Link href={"/neuron"}>Home</Link> /{" "}
-                  <span className={"text-capitalize"}>{pageSection}</span>{" "}
-                  {pageSection?.toLowerCase() !==
-                  currentRoute?.title.toLowerCase() ? (
-                    <>
-                      /{" "}
-                      <span className={"text-capitalize"}>
-                        {currentRoute?.title}
-                      </span>
-                    </>
-                  ) : null}
-                </p>
-              </div>
-              {/* <div className={"pt-4"}>
-                <h1>{docsContent?.frontmatter?.title}</h1>
-              </div> */}
+              <Breadcrumbs
+                section={pageSection}
+                currentPage={currentRoute?.title}
+              />
               <Suspense fallback={<p>Loading....</p>}>
                 <MDXContent {...docsContent} />
               </Suspense>
-              <div className={"d-flex justify-content-between"}>
-                {prevRoute ? (
-                  <Link
-                    href={`/neuron/docs/${prevRoute.filename}`}
-                    className={"text-decoration-none"}
-                  >
-                    <Button
-                      variant="outline-primary"
-                      className={styles.outlineBtn}
-                    >
-                      <i className="fa-solid fa-chevron-left pe-3"></i>
-                      {prevRoute?.title}
-                    </Button>
-                  </Link>
-                ) : (
-                  <div></div>
-                )}
-                {nextRoute ? (
-                  <Link
-                    href={`/neuron/docs/${nextRoute.filename}`}
-                    className={"text-decoration-none"}
-                  >
-                    <Button
-                      variant="outline-primary"
-                      className={styles.outlineBtn}
-                    >
-                      {nextRoute?.title}
-                      <i className="fa-solid fa-chevron-right ps-3"></i>
-                    </Button>
-                  </Link>
-                ) : (
-                  <div></div>
-                )}
-              </div>
+              <BackNextBtnGroup nextRoute={nextRoute} prevRoute={prevRoute} />
             </Col>
           </Row>
         </Col>
-        <Col sm={3} className={"pt-4 ps-4"}>
-          <div className={styles.stickySideNav}>
-            {(docsContent.frontmatter?.subnav as string[])?.map?.(
-              (item: any, index: number) => (
-                <p key={index} className={"mb-1"}>
-                  <small>{item}</small>
-                </p>
-              )
-            )}
-          </div>
+        <Col sm={3} className={"pt-4 ps-4 pe-0"}>
+          <SubNav items={docsContent.frontmatter.subnav} />
         </Col>
       </Row>
     </>

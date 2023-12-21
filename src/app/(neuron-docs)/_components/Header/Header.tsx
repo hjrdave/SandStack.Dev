@@ -3,12 +3,12 @@ import React from "react";
 import { Navbar, Container, Nav, Col, Row } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
-import SandStackLogo from "../../../../public/Logo-Sandstack.webp";
-import NeuronLogo from "../../../../public/logo-neuron.webp";
+import SandStackLogo from "../../../../../public/Logo-Sandstack.webp";
+import NeuronLogo from "../../../../../public/logo-neuron.webp";
 import Sticky from "react-stickynode";
 import styles from "./DocsHeader.module.scss";
 interface Props {}
-export default function DocsHeader({}: Props) {
+export default function Header({}: Props) {
   return (
     <>
       <Sticky

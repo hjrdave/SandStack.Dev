@@ -22,9 +22,8 @@ export default function Collapsible({
   return (
     <>
       <Button
-        variant="link"
         onClick={() => setOpen(!open)}
-        className={`text-decoration-none px-0 ${labelClassName}`}
+        className={`py-3 text-decoration-none bg-transparent border-0 ${labelClassName}`}
       >
         {icon ? <span className={"pe-2"}>{icon}</span> : null}
         {label}
