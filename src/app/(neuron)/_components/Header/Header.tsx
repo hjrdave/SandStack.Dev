@@ -34,6 +34,15 @@ export default function Header({}: Props) {
                 </Navbar.Brand>
 
                 <div className={"d-flex align-items-center"}>
+                  <Nav.Item className={"pe-2"}>
+                    <Link
+                      href={"/neuron/docs/introduction"}
+                      className="text-decoration-none text-white"
+                    >
+                      Learn
+                    </Link>
+                  </Nav.Item>
+                  <div className={"h-100 border-end mx-3"}></div>
                   <Nav.Item className={"pe-4 fw-semibold"}>
                     <a
                       href={"https://www.npmjs.com/package/@sandstack/neuron"}
