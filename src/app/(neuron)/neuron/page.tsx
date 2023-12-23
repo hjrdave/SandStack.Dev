@@ -1,4 +1,4 @@
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row, Container, Button } from "react-bootstrap";
 import CodeHighlighting from "@/components/atoms/CodeHighlighting";
 import ParticleBG from "../_components/ParticleBG";
 import NeuronLogo from "../../../../public/logo-neuron.webp";
@@ -10,9 +10,9 @@ export default function LandingPage() {
       <CodeHighlighting />
 
       <main>
-        <Container>
+        <Container style={{ marginTop: "4rem" }}>
           <Row>
-            <Col className={""} style={{ paddingTop: "10rem" }}>
+            <Col className={"d-flex align-items-center justify-content-center"}>
               <div className={"d-flex flex-column align-content-center"}>
                 <div className={"d-flex justify-content-center"}>
                   <Image
@@ -32,7 +32,37 @@ export default function LandingPage() {
                 </p>
               </div>
             </Col>
-            <Col></Col>
+            <Col>
+              {/* <div className={"bg-black"}> */}
+              <div className={"d-flex justify-content-end"}>
+                <Button className={"me-2"}>Vanilla</Button>
+                <Button>React</Button>
+              </div>
+              <pre className={"language-javascript"}>
+                <code className={"language-javascript"}>
+                  {`
+import Neuron from "@sandstack/neuron";
+const Store = Neuron.Store();
+
+Store.add({
+  key: "pokemon",
+  state: "Pikachu",
+});
+
+Store.get("pokemon");
+Store.set("pokemon", "Mewtwo");
+
+onDispatch((payload) => {
+  if (payload.key === "pokemon") {
+    
+  }
+});
+                      `}
+                </code>
+              </pre>
+
+              {/* </div> */}
+            </Col>
           </Row>
         </Container>
       </main>
