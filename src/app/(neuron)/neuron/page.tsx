@@ -2,6 +2,7 @@ import { Col, Row, Container, Button } from "react-bootstrap";
 import CodeHighlighting from "@/components/atoms/CodeHighlighting";
 import ParticleBG from "../_components/ParticleBG";
 import NeuronLogo from "../../../../public/logo-neuron.webp";
+import SnippetSwitcher from "../_components/SnippetSwitcher";
 import Image from "next/image";
 
 export default function LandingPage() {
@@ -9,12 +10,17 @@ export default function LandingPage() {
     <>
       <CodeHighlighting />
 
-      <main>
-        <Container style={{ marginTop: "4rem" }}>
-          <Row>
-            <Col className={"d-flex align-items-center justify-content-center"}>
-              <div className={"d-flex flex-column align-content-center"}>
-                <div className={"d-flex justify-content-center"}>
+      <main style={{ height: "calc(100vh - 100px)" }}>
+        <Container className={" h-100"}>
+          <Row className={"h-100"}>
+            <Col
+              className={
+                "d-flex justify-content-center align-items-center pb-5"
+              }
+              //style={{ marginTop: "5rem" }}
+            >
+              <div>
+                <div>
                   <Image
                     src={NeuronLogo}
                     width={225}
@@ -32,36 +38,10 @@ export default function LandingPage() {
                 </p>
               </div>
             </Col>
-            <Col>
-              {/* <div className={"bg-black"}> */}
-              <div className={"d-flex justify-content-end"}>
-                <Button className={"me-2"}>Vanilla</Button>
-                <Button>React</Button>
+            <Col className={"d-flex align-items-center"}>
+              <div className={"w-100"}>
+                <SnippetSwitcher />
               </div>
-              <pre className={"language-javascript"}>
-                <code className={"language-javascript"}>
-                  {`
-import Neuron from "@sandstack/neuron";
-const Store = Neuron.Store();
-
-Store.add({
-  key: "pokemon",
-  state: "Pikachu",
-});
-
-Store.get("pokemon");
-Store.set("pokemon", "Mewtwo");
-
-onDispatch((payload) => {
-  if (payload.key === "pokemon") {
-    
-  }
-});
-                      `}
-                </code>
-              </pre>
-
-              {/* </div> */}
             </Col>
           </Row>
         </Container>

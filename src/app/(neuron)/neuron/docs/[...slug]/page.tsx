@@ -38,10 +38,23 @@ export default async function Page({ params }: Props) {
   const currentRouteIndex = navigationArray.findIndex(
     (item) => item?.filename === route
   );
+
   const currentRoute = navigationArray[currentRouteIndex];
-  const prevRoute = navigationArray[currentRouteIndex - 1];
-  const nextRoute = navigationArray[currentRouteIndex + 1];
   const pageSection = currentRoute?.filename.split("/")[0].replaceAll("-", " ");
+  const prevRoute = () => {
+    const subItems = navigationArray[currentRouteIndex - 1];
+    const routeData = subItems
+      ? { section: pageSection, ...subItems }
+      : undefined;
+    return routeData;
+  };
+  const nextRoute = () => {
+    const subItems = navigationArray[currentRouteIndex + 1];
+    const routeData = subItems
+      ? { section: pageSection, ...subItems }
+      : undefined;
+    return routeData;
+  };
   const { frontmatter, compiledSource } = (await getNeuronDocs(route)) as any;
 
   return (
@@ -70,8 +83,8 @@ export default async function Page({ params }: Props) {
               <Row>
                 <Col>
                   <BackNextBtnGroup
-                    nextRoute={nextRoute}
-                    prevRoute={prevRoute}
+                    nextRoute={nextRoute()}
+                    prevRoute={prevRoute()}
                   />
                 </Col>
               </Row>

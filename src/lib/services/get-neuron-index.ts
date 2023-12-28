@@ -2,6 +2,7 @@ interface Index {
   section: string;
   filename?: string;
   items?: {
+    parent: string;
     title: string;
     filename: string;
   }[];

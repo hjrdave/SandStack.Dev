@@ -5,12 +5,12 @@ import styles from "./BackNextBtnGroup.module.scss";
 
 interface Props {
   prevRoute?: {
-    section?: string;
+    parent?: string;
     filename?: string;
     title?: string;
   };
   nextRoute?: {
-    section?: string;
+    parent?: string;
     filename?: string;
     title?: string;
   };
@@ -30,7 +30,7 @@ export default function BackNextBtnGroup({ prevRoute, nextRoute }: Props) {
               className={`d-flex flex-column align-items-start ${styles.outlineBtn}`}
             >
               <span className={"d-flex align-items-end fw-bold"}>
-                <small>Vanilla</small>
+                <small>{prevRoute.parent}</small>
               </span>
               <span className={"text-capitalize pt-3 fs-4"}>
                 <i className="fa-solid fa-chevron-left pe-3"></i>
@@ -51,7 +51,7 @@ export default function BackNextBtnGroup({ prevRoute, nextRoute }: Props) {
               className={`d-flex flex-column align-items-end w-100 ${styles.outlineBtn}`}
             >
               <span className={"d-flex align-items-start fw-bold"}>
-                <small>Vanilla</small>
+                <small>{nextRoute.parent}</small>
               </span>
               <span className={"text-capitalize pt-3 fs-4"}>
                 {nextRoute?.title}
