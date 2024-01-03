@@ -12,7 +12,6 @@ interface Props {
 
 export default function SubNav({ items, markdownBodyContainerId }: Props) {
   const { currentId } = useScrollToId({
-    containerSelector: markdownBodyContainerId,
     tag: "h2",
   });
 
