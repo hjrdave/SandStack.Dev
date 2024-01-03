@@ -20,7 +20,6 @@ export default function SnippetSwitcher() {
               {`
 <p>Counter: <span id="count">0</span></p>
 <button onclick="increment()">increment</button>
-<script src="https://unpkg.com/@sandstack/neuron@0.0.0-alpha.44/umd/index.js"></script>
 <script>
     const Store = Neuron.Store();
 
@@ -34,7 +33,7 @@ export default function SnippetSwitcher() {
 
     onDispatch((payload) => {
         if (payload.key === "counter") {
-            counter.innerHTML = Store.get("counter");
+            counter.innerHTML = payload.state;
         }
     });
 </script>
