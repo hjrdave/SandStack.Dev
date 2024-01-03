@@ -25,7 +25,7 @@ export default function ProjectCards() {
         </>
       ),
       title: "Neuron",
-      lede: "Neuron is a light weight framework agnostic global state manager for Javascript apps, with React support.",
+      lede: "Neuron is a lightweight framework agnostic global state manager for Javascript apps, with React support.",
       route: "/neuron",
     },
     {
