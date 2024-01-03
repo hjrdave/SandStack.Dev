@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getNeuronIndex } from "@/lib/services/get-neuron-index";
 import { Container, Row, Col } from "react-bootstrap";
 import SideNav from "@/app/(neuron)/_components/SideNav";
+import Footer from "@/components/organisms/Footer";
 
 export const metadata: Metadata = {
   title: "Neuron",
@@ -24,6 +25,7 @@ export default async function DocsLayout({
           <Col>{children}</Col>
         </Row>
       </Container>
+      <Footer />
     </>
   );
 }
