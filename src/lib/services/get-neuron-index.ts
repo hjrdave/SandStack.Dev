@@ -8,9 +8,9 @@ interface Index {
   }[];
 }
 export const getNeuronIndex = async (): Promise<Index[]> => {
-  const branch = "create-docs";
+  const branch = "master";
   const res = await fetch(
-    `https://raw.githubusercontent.com/hjrdave/Neuron/${branch}/src/docs/index.json`,
+    `https://raw.githubusercontent.com/hjrdave/Neuron/${branch}/docs/index.json`,
     { next: { revalidate: 0 } }
   );
 
