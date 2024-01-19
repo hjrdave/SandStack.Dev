@@ -31,6 +31,25 @@ export default function ProjectCards() {
     {
       icon: (
         <>
+          <>
+            <Image
+              src={"/neuron-devtools.webp"}
+              alt={"Neuron Devtools"}
+              width="0"
+              height="0"
+              sizes={"100vh"}
+              style={{ width: "180px", height: "auto" }}
+            />
+          </>
+        </>
+      ),
+      title: "Neuron Devtools",
+      lede: "Official devtools for the Neuron global state manager.",
+      route: "/neuron",
+    },
+    {
+      icon: (
+        <>
           <i
             className="fa-brands fa-react"
             style={{ fontSize: "5rem", color: "#2291c0" }}
