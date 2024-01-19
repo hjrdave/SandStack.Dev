@@ -21,7 +21,7 @@ export default function SnippetSwitcher() {
 <p>Counter: <span id="count">0</span></p>
 <button onclick="increment()">increment</button>
 <script>
-    const Store = Neuron.Store();
+    const Store = createStore();
 
     Store.add({
         key: "counter",
@@ -45,9 +45,9 @@ export default function SnippetSwitcher() {
           <pre className={"language-javascript mt-0 pt-0"}>
             <code className={"language-javascript"}>
               {`
-import Neuron from '@sandstack/neuron/react'
+import {createStore} from '@sandstack/neuron/react'
 
-const {State, useNeuron} = Neuron.Store();
+const {State, useNeuron} = createStore();
 
 function Store(){
   return(
