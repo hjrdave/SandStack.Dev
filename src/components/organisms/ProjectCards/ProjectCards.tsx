@@ -60,29 +60,29 @@ export default function ProjectCards() {
       lede: "A duel calculator web app for the Yugioh Trading Card Game.",
       route: "https://hjrdave.github.io/DuelCalculator/",
     },
-    {
-      icon: (
-        <>
-          <i className="fa-solid fa-database" style={{ fontSize: "4rem" }}></i>
-        </>
-      ),
-      title: "RentalDVD API",
-      lede: "This is a REST testing API based on the DVD Rental Database.",
-      route: "rental-dvd-api",
-    },
-    {
-      icon: (
-        <>
-          <i
-            className="fa-solid fa-screwdriver-wrench"
-            style={{ fontSize: "5rem", color: "#2291c0" }}
-          ></i>
-        </>
-      ),
-      title: "Neuron DevTools",
-      lede: "Chrome devtools extension for the Neuron Global State Manager.",
-      route: "neuron-devtools",
-    },
+    // {
+    //   icon: (
+    //     <>
+    //       <i className="fa-solid fa-database" style={{ fontSize: "4rem" }}></i>
+    //     </>
+    //   ),
+    //   title: "RentalDVD API",
+    //   lede: "This is a REST testing API based on the DVD Rental Database.",
+    //   route: "rental-dvd-api",
+    // },
+    // {
+    //   icon: (
+    //     <>
+    //       <i
+    //         className="fa-solid fa-screwdriver-wrench"
+    //         style={{ fontSize: "5rem", color: "#2291c0" }}
+    //       ></i>
+    //     </>
+    //   ),
+    //   title: "Neuron DevTools",
+    //   lede: "Chrome devtools extension for the Neuron Global State Manager.",
+    //   route: "neuron-devtools",
+    // },
     {
       icon: (
         <>

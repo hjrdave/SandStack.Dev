@@ -14,7 +14,7 @@ export default function About() {
             }
           >
             <Image
-              src={"/profile_pic.webp"}
+              src={"/profile-pic.webp"}
               width={250}
               height={250}
               className={"rounded-circle"}
@@ -31,13 +31,7 @@ export default function About() {
               </p>
               <div className={"border-bottom border-2 border-secondary"}></div>
               <p className={"pt-3"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                My name is David Sanders. I am a software engineer
               </p>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

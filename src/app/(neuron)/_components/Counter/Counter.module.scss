@@ -1,0 +1,11 @@
+@use "../../variables.scss" as *;
+.compContainer {
+  position: absolute;
+  z-index: 100;
+  right: -20px;
+  bottom: -20px;
+}
+.bk {
+  background-color: #57c09b;
+  border-radius: 0.25rem;
+}

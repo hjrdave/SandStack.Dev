@@ -1,25 +1,28 @@
 "use client";
 import { Button, Tabs, Tab } from "react-bootstrap";
+import Counter from "../Counter";
 export default function SnippetSwitcher() {
   return (
     <>
-      <Tabs
-        defaultActiveKey="Vanilla"
-        id="uncontrolled-tab-example"
-        className="p-0 d-flex justify-content-end text-white"
-        transition={false}
-        style={{
-          backgroundColor: "#1e1e1e",
-          borderTopRightRadius: ".5rem",
-          borderTopLeftRadius: ".5rem",
-        }}
-      >
-        <Tab eventKey="Vanilla" title="VanillaJS" className="text-white">
-          <pre className={"language-html pt-0 mt-0"}>
-            <code className={"language-html"}>
-              {`
-<p>Counter: <span id="count">0</span></p>
-<button onclick="increment()">increment</button>
+      <div style={{ position: "relative" }}>
+        <Counter />
+        <Tabs
+          defaultActiveKey="Vanilla"
+          id="uncontrolled-tab-example"
+          className="p-0 d-flex justify-content-end text-white"
+          transition={false}
+          style={{
+            backgroundColor: "#1e1e1e",
+            borderTopRightRadius: ".5rem",
+            borderTopLeftRadius: ".5rem",
+          }}
+        >
+          <Tab eventKey="Vanilla" title="VanillaJS" className="text-white">
+            <pre className={"language-html pt-0 mt-0"}>
+              <code className={"language-html"}>
+                {`
+<p>Count: <span id="count">0</span></p>
+<button onclick="increment()">Add</button>
 <script>
     const Store = createStore();
 
@@ -38,13 +41,13 @@ export default function SnippetSwitcher() {
     });
 </script>
 `}
-            </code>
-          </pre>
-        </Tab>
-        <Tab eventKey="React" title="React" className={"p-0 text-white"}>
-          <pre className={"language-javascript mt-0 pt-0"}>
-            <code className={"language-javascript"}>
-              {`
+              </code>
+            </pre>
+          </Tab>
+          <Tab eventKey="React" title="React" className={"p-0 text-white"}>
+            <pre className={"language-javascript mt-0 pt-0"}>
+              <code className={"language-javascript"}>
+                {`
 import {createStore} from '@sandstack/neuron/react'
 
 const {State, useNeuron} = createStore();
@@ -61,19 +64,21 @@ function Comp(){
 
   return(
     <>
-     <p>Counter: {count}</p>
+     <p>Count: {count}</p>
      <button onClick={() => setCount((prev) => prev + 1)}>
+      Add
+     </button>
     </>
   )
 }
 `}
-            </code>
-          </pre>
-        </Tab>
-        <Tab eventKey="Typescript" title="React + TS" className={"p-0"}>
-          <pre className={"language-typescript mt-0 pt-0"}>
-            <code className={"language-typescript"}>
-              {`
+              </code>
+            </pre>
+          </Tab>
+          <Tab eventKey="Typescript" title="React + TS" className={"p-0"}>
+            <pre className={"language-typescript mt-0 pt-0"}>
+              <code className={"language-typescript"}>
+                {`
 import Neuron from '@sandstack/neuron/react'
 
 interface State{
@@ -94,16 +99,19 @@ function Comp(){
 
   return(
     <>
-     <p>Counter: {count}</p>
-     <button onClick={() => setCount((prev) => prev + 1)}>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount((prev) => prev + 1)}>
+      Add
+      </button>
     </>
   )
 }
 `}
-            </code>
-          </pre>
-        </Tab>
-      </Tabs>
+              </code>
+            </pre>
+          </Tab>
+        </Tabs>
+      </div>
     </>
   );
 }
