@@ -61,9 +61,9 @@ export default async function Page({ params }: Props) {
     <>
       <CodeHighlighting />
       <Row id={"markdownBodyContainer"}>
-        <Col>
+        <Col sm={12} lg={9} className={"px-4"}>
           <Row className={"d-flex justify-content-center"}>
-            <Col sm={10} className={"pe-3"}>
+            <Col sm={12} lg={10} className={"pe-md-3"}>
               <Row>
                 <Col>
                   <Breadcrumbs
@@ -91,7 +91,7 @@ export default async function Page({ params }: Props) {
             </Col>
           </Row>
         </Col>
-        <Col sm={3} className={"pt-4 ps-4 pe-0"}>
+        <Col sm={12} md={3} className={"pt-4 ps-4 pe-0 d-none d-lg-block"}>
           <SubNav
             items={frontmatter.subnav}
             markdownBodyContainerId={"#markdownBodyContainer"}
