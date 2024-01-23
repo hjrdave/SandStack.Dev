@@ -1,12 +1,11 @@
 "use client";
 import React from "react";
-import { Navbar, Container, Nav, Col, Row } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
 import SandStackLogo from "../../../../../public/Logo-Sandstack.webp";
 import NeuronLogo from "../../../../../public/logo-neuron.webp";
 import Sticky from "react-stickynode";
-import styles from "./DocsHeader.module.scss";
 interface Props {}
 export default function Header({}: Props) {
   return (
@@ -17,32 +16,31 @@ export default function Header({}: Props) {
         innerZ={1000}
       >
         <Navbar expand="lg">
-          <Container fluid>
+          <Container fluid className={"py-2"}>
+            <Navbar.Brand className={"ps-3"}>
+              <Link
+                href={"/neuron"}
+                className={"d-flex text-white text-decoration-none"}
+              >
+                <Image src={NeuronLogo} width={35} alt={"Neuron Logo"} />
+                <p className={"mb-0 ps-2"}>neuron</p>
+              </Link>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav
-                className={"m-auto w-100 d-flex justify-content-between py-2"}
-              >
-                <Navbar.Brand className={"ps-3"}>
+              <Nav className="me-auto w-100 d-flex justify-content-end">
+                <div className={"border-top mt-3 mb-3 d-lg-none"}></div>
+                <Nav.Item className={""}>
                   <Link
-                    href={"/neuron"}
-                    className={"d-flex text-white text-decoration-none"}
+                    href={"/neuron/docs/introduction"}
+                    className="text-decoration-none text-white"
                   >
-                    <Image src={NeuronLogo} width={35} alt={"Neuron Logo"} />
-                    <p className={"mb-0 ps-2"}>neuron</p>
+                    Learn
                   </Link>
-                </Navbar.Brand>
-
-                <div className={"d-flex align-items-center"}>
-                  <Nav.Item className={"pe-2"}>
-                    <Link
-                      href={"/neuron/docs/introduction"}
-                      className="text-decoration-none text-white"
-                    >
-                      Learn
-                    </Link>
-                  </Nav.Item>
-                  <div className={"h-100 border-end mx-3"}></div>
+                </Nav.Item>
+                <div className={"border-end mx-3 d-none d-lg-block"}></div>
+                <div className={"border-top mt-3 d-lg-none"}></div>
+                <div className={"d-flex justify-content-end pt-3 pt-lg-0"}>
                   <Nav.Item className={"pe-4 fw-semibold"}>
                     <a
                       href={"https://www.npmjs.com/package/@sandstack/neuron"}

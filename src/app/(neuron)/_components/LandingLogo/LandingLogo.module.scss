@@ -1,0 +1,26 @@
+@import "../../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../../../node_modules/bootstrap/scss/variables";
+
+.image {
+  width: 175px;
+  height: auto;
+  @include media-breakpoint-up(lg) {
+    width: 225px;
+    height: auto;
+  }
+}
+.title {
+  font-size: 3.25rem;
+  line-height: 3.25rem;
+  @include media-breakpoint-up(lg) {
+    font-size: 4.25rem;
+    line-height: 4.25rem;
+  }
+}
+.subTitle {
+  font-size: 1rem;
+  @include media-breakpoint-up(lg) {
+    font-size: 1.35rem;
+  }
+}
