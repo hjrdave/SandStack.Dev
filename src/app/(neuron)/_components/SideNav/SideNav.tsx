@@ -1,10 +1,11 @@
 "use client";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import Collapsible from "../../../../components/atoms/Collapsible";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button, Offcanvas } from "react-bootstrap";
 import Image from "next/image";
+import Sticky from "react-stickynode";
 import NeuronLogo from "../../../../../public/logo-neuron.webp";
 import styles from "./SideNav.module.scss";
 
@@ -22,6 +23,9 @@ export default function SideNav({ navItems }: Props) {
   const [show, setShow] = useState(false);
   const pathname = usePathname();
   const rootPath = "/neuron/docs/";
+  useEffect(() => {
+    setShow(false);
+  }, [pathname]);
 
   return (
     <>
@@ -29,7 +33,7 @@ export default function SideNav({ navItems }: Props) {
         className={`${styles.mobileBtn} bg-black position-fixed rounded-start rounded-end d-lg-none mt-5`}
         onClick={() => setShow(true)}
       >
-        <i className="fa-solid fa-ellipsis-vertical fs-1 p-3"></i>
+        <i className="fa-solid fa-ellipsis-vertical fs-1 p-2 py-4"></i>
       </div>
       <Offcanvas show={show} onHide={setShow} responsive="lg">
         <Offcanvas.Header closeButton>
@@ -40,10 +44,8 @@ export default function SideNav({ navItems }: Props) {
             </div>
           </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body className={`d-flex p-0 pe-3`}>
-          <div
-            className={`d-flex flex-column align-items-start w-100 ${styles.compContainer}`}
-          >
+        <Offcanvas.Body className={`d-flex p-0 pe-3 `}>
+          <Sticky enabled={true} innerZ={1000} top={100} className={"w-100"}>
             {navItems.map((navItem, index) => {
               const navItemRoute = `${rootPath}${navItem.filename}`;
               const sectionFilename = navItem.filename;
@@ -94,7 +96,7 @@ export default function SideNav({ navItems }: Props) {
                 </Fragment>
               );
             })}
-          </div>
+          </Sticky>
         </Offcanvas.Body>
       </Offcanvas>
     </>

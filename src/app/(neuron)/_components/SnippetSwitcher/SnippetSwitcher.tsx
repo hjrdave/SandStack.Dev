@@ -1,11 +1,17 @@
 "use client";
 import { Button, Tabs, Tab } from "react-bootstrap";
 import Counter from "../Counter";
+import styles from "./SnippetSwitcher.module.scss";
+
 export default function SnippetSwitcher() {
   return (
     <>
       <div style={{ position: "relative" }}>
-        <Counter />
+        <div
+          className={`${styles.counterContainer} d-flex justify-content-end pb-3`}
+        >
+          <Counter />
+        </div>
         <Tabs
           defaultActiveKey="Vanilla"
           id="uncontrolled-tab-example"
