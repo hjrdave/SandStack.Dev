@@ -16,7 +16,7 @@ export default function LandingPage() {
               sm={12}
               lg={6}
               className={
-                "d-flex align-items-center justify-content-center pb-0 pb-lg-5"
+                "d-flex align-items-center justify-content-center pb-0 pb-lg-5 pt-4 pt-lg-0"
               }
             >
               <LandingLogo />

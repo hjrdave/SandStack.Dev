@@ -8,7 +8,7 @@ export default function SnippetSwitcher() {
     <>
       <div style={{ position: "relative" }}>
         <div
-          className={`${styles.counterContainer} d-flex justify-content-end pb-3`}
+          className={`${styles.counterContainer} d-flex justify-content-center py-4`}
         >
           <Counter />
         </div>

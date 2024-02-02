@@ -45,7 +45,7 @@ export default function ProjectCards() {
       ),
       title: "Neuron Devtools",
       lede: "Official devtools for the Neuron global state manager.",
-      route: "/neuron",
+      route: "/neuron/docs/devtools",
     },
     {
       icon: (

@@ -2,10 +2,8 @@
 @import "../../../../../node_modules/bootstrap/scss/mixins/breakpoints";
 @import "../../../../../node_modules/bootstrap/scss/variables";
 .counterContainer {
-  position: absolute;
-  top: -120px;
-  right: 0px;
   @include media-breakpoint-up(lg) {
+    position: absolute;
     z-index: 100;
     right: -20px;
     bottom: -20px;
