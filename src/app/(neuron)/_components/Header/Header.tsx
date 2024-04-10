@@ -35,7 +35,7 @@ export default function Header({}: Props) {
                     href={"/neuron/docs/introduction"}
                     className="text-decoration-none text-white"
                   >
-                    Learn
+                    Read Docs
                   </Link>
                 </Nav.Item>
                 <div className={"border-end mx-3 d-none d-lg-block"}></div>

@@ -27,25 +27,33 @@ export default function SnippetSwitcher() {
             <pre className={"language-html pt-0 mt-0"}>
               <code className={"language-html"}>
                 {`
-<p>Count: <span id="count">0</span></p>
-<button onclick="increment()">Add</button>
-<script>
-    const Store = createStore();
+ <p>Count: <span id="count">0</span></p>
+ <button id="incrementBtn" onclick="increment()">Increment</button>
 
-    Store.add({
-        key: "counter",
-        state: 0
-    });
+ <script>
+   window.onload = (event) => {
 
-    const increment = () => Store.set("counter", (prev) => prev + 1);
-    const counter = document.querySelector('#count');
+     const Store = Neuron.createStore();
 
-    onDispatch((payload) => {
-        if (payload.key === "counter") {
-            counter.innerHTML = payload.state;
-        }
-    });
-</script>
+     Store.add({
+       key: "counter",
+       state: 0,
+     });
+
+     function increment() {
+       Store.set("counter", (prev) => prev + 1);
+     }
+
+     const counter = document.querySelector("#count");
+
+     Store.onDispatch((payload) => {
+       if (payload.key === "counter") {
+         counter.innerHTML = payload.state;
+       }
+     });
+
+   };
+ </script>
 `}
               </code>
             </pre>
