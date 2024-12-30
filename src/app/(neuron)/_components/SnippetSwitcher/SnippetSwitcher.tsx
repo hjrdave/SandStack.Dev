@@ -59,7 +59,7 @@ import {neuron} from '@sandstack/neuron/react'
 const useCount = neuron(0);
 
 function Comp(){
-  const [count, countActions] = useCount('counter')
+  const [count, countActions] = useCount()
 
   return(
     <>
