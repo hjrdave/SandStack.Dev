@@ -13,7 +13,7 @@ export default function SnippetSwitcher() {
           <Counter />
         </div>
         <Tabs
-          defaultActiveKey="Vanilla"
+          defaultActiveKey="Core"
           id="uncontrolled-tab-example"
           className="p-0 d-flex justify-content-end text-white"
           transition={false}
@@ -23,7 +23,7 @@ export default function SnippetSwitcher() {
             borderTopLeftRadius: ".5rem",
           }}
         >
-          <Tab eventKey="Vanilla" title="VanillaJS" className="text-white">
+          <Tab eventKey="Core" title="Core" className="text-white">
             <pre className={"language-html pt-0 mt-0"}>
               <code className={"language-html"}>
                 {`
@@ -32,26 +32,18 @@ export default function SnippetSwitcher() {
 
  <script>
    window.onload = (event) => {
-
-     const Store = Neuron.createStore();
-
-     Store.add({
-       key: "counter",
-       state: 0,
-     });
+     const Neuron = NeuronCore.Neuron;
+     const counter = new Neuron(0);
 
      function increment() {
-       Store.set("counter", (prev) => prev + 1);
+        counter.set((prev) => prev + 1)
      }
 
-     const counter = document.querySelector("#count");
+     const counterNode = document.querySelector("#count");
 
-     Store.onDispatch((payload) => {
-       if (payload.key === "counter") {
-         counter.innerHTML = payload.state;
-       }
+     counter.effect((payload) => {
+       counterNode.innerHTML = payload.state;
      });
-
    };
  </script>
 `}
@@ -62,61 +54,19 @@ export default function SnippetSwitcher() {
             <pre className={"language-javascript mt-0 pt-0"}>
               <code className={"language-javascript"}>
                 {`
-import {createStore} from '@sandstack/neuron/react'
+import {neuron} from '@sandstack/neuron/react'
 
-const {State, useNeuron} = createStore();
+const useCount = neuron(0);
 
-function Store(){
-  return(
-    <>
-     <State name={'counter'} state={0}/>
-    </>
-  )
-}
 function Comp(){
-  const [count, setCount] = useNeuron('counter')
+  const [count, countActions] = useCount('counter')
 
   return(
     <>
      <p>Count: {count}</p>
-     <button onClick={() => setCount((prev) => prev + 1)}>
+     <button onClick={() => countActions.set((prev) => prev + 1)}>
       Add
      </button>
-    </>
-  )
-}
-`}
-              </code>
-            </pre>
-          </Tab>
-          <Tab eventKey="Typescript" title="React + TS" className={"p-0"}>
-            <pre className={"language-typescript mt-0 pt-0"}>
-              <code className={"language-typescript"}>
-                {`
-import Neuron from '@sandstack/neuron/react'
-
-interface State{
-    counter: number
-}
-
-const {State, useNeuron} = Neuron.Store<State>();
-
-function Store(){
-  return(
-    <>
-     <State<number> name={'counter'} state={0}/>
-    </>
-  )
-}
-function Comp(){
-  const [count, setCount] = useNeuron<number>('counter')
-
-  return(
-    <>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount((prev) => prev + 1)}>
-      Add
-      </button>
     </>
   )
 }
