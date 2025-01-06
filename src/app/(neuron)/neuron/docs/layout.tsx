@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getNeuronIndex } from "@/lib/services/get-neuron-index";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Alert } from "react-bootstrap";
 import SideNav from "@/app/(neuron)/_components/SideNav";
 import Footer from "@/components/organisms/Footer";
 import styles from "@/app/(neuron)/_components/SideNav/SideNav.module.scss";
@@ -24,6 +24,21 @@ export default async function DocsLayout({
             <SideNav navItems={navIndex} />
           </Col>
           <Col sm={12} md={10}>
+            <Row>
+              <Col md={10}>
+                <Alert>
+                  Neuron is still in active development and should not be used
+                  in production. Feel free to play around with it and submit an{" "}
+                  <a
+                    target={"_blank"}
+                    href={"https://github.com/hjrdave/Neuron/issues"}
+                  >
+                    issue
+                  </a>
+                  .
+                </Alert>
+              </Col>
+            </Row>
             {children}
           </Col>
         </Row>
