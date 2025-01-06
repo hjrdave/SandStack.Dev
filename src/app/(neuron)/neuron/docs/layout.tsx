@@ -25,7 +25,7 @@ export default async function DocsLayout({
           </Col>
           <Col sm={12} md={10}>
             <Row>
-              <Col md={10}>
+              <Col>
                 <Alert>
                   Neuron is still in active development and should not be used
                   in production. Feel free to play around with it and submit an{" "}
